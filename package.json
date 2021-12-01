@@ -9,9 +9,9 @@
     "dev": "concurrently \"yarn web dev\" \"yarn server start\""
   },
   "workspaces": [
-    "./app-maker",
+    "./web",
     "./server",
-    "./sellereeapp"
+    "./expo"
   ],
   "devDependencies": {
     "concurrently": "^6.4.0"
