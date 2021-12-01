@@ -6,6 +6,7 @@
   "scripts": {
     "web": "yarn workspace @apps/web",
     "server": "yarn workspace @apps/server",
+    "expo": "yarn workspace @apps/expo",
     "dev": "concurrently \"yarn web dev\" \"yarn server start\""
   },
   "workspaces": [

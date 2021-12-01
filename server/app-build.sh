@@ -1,2 +1,3 @@
-cd ../sellereeapp
+cd ../expo
 ls
+cat setting.json

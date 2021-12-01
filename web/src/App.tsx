@@ -1,4 +1,5 @@
 import { ChangeEventHandler, useState } from "react";
+import axios from "axios";
 
 function App() {
   const [identifier, setIdentifier] = useState("");
@@ -9,7 +10,9 @@ function App() {
     setIdentifier(e.target.value);
   };
 
-  const onSubmit = () => {};
+  const onSubmit = () => {
+    axios.post("http://localhost:3001", { identifier });
+  };
 
   return (
     <div className="container mx-auto p-4">
