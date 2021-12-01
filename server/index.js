@@ -23,14 +23,19 @@ function createSettingJSON(identifier) {
 
 function buildScript(res) {
   const { exec } = require("child_process");
-  const result = exec("sh app-build.sh", (error, stdout, stderr) => {
-    console.log(stdout);
-    console.log(stderr);
-    res.send(stdout);
-    if (error !== null) {
-      console.log(`exec error: ${error}`);
-      res.send(error);
-    }
+  const child = exec("cd ../expo && npx eas build -p android");
+
+  child.stdout.on("data", function (data) {
+    console.log("stdout: " + data);
+    res.write(data);
+  });
+  child.stderr.on("data", function (data) {
+    console.log("stderr: " + data);
+    res.write(data);
+  });
+  child.on("close", function (code) {
+    console.log("closing code: " + code);
+    res.end();
   });
 }
 
