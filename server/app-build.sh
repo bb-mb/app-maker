@@ -1,3 +1,2 @@
 cd ../expo
-ls
-cat setting.json
+npx eas build -p android
