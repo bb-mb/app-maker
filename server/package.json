@@ -1,9 +1,16 @@
 {
-  "name": "server",
+  "name": "@apps/server",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon index"
+  },
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

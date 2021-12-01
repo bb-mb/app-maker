@@ -1,0 +1,19 @@
+{
+  "name": "app-maker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "web": "yarn workspace @apps/web",
+    "server": "yarn workspace @apps/server",
+    "dev": "concurrently \"yarn web dev\" \"yarn server start\""
+  },
+  "workspaces": [
+    "./app-maker",
+    "./server",
+    "./sellereeapp"
+  ],
+  "devDependencies": {
+    "concurrently": "^6.4.0"
+  }
+}
