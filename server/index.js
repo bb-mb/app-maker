@@ -27,12 +27,18 @@ function buildScript(res) {
 
   child.stdout.on("data", function (data) {
     console.log("stdout: " + data);
-    res.write(data);
+    if (data?.includes("Build details:")) {
+      child.kill();
+      res.send(data);
+    }
   });
+
   child.stderr.on("data", function (data) {
     console.log("stderr: " + data);
-    res.write(data);
+    child.kill();
+    res.send(data);
   });
+
   child.on("close", function (code) {
     console.log("closing code: " + code);
     res.end();
