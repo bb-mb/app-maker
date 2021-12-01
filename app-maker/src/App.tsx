@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="container mx-auto p-4">
       <div className="mx-auto max-w-md form-control p-4 rounded-box mt-8 shadow-lg">
-        <h1 className="text-2xl leading-none font-extrabold tracking-tight mb-4">
+        <h1 className="text-2xl leading-none font-bold tracking-tight mb-4">
           create selleree app
         </h1>
         <label className="label">
